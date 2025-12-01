@@ -1,11 +1,16 @@
 ---
 title: OP_MUL for Bitcoin Core
+layout: default
 ---
 
 <style>
   body {
     background-color: #111111;
     color: #eeeeee;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   a {
     color: #66b3ff;
@@ -13,16 +18,18 @@ title: OP_MUL for Bitcoin Core
   code, pre {
     background-color: #222222;
     border-radius: 4px;
+    padding: 0.15rem 0.35rem;
   }
 </style>
+
+# OP_MUL for Bitcoin Core
 
 This site documents an implementation of a new opcode in Bitcoin Core:
 
 ```text
 OP_MUL = 0x95
 ```
-
-The opcode performs signed 32-bit integer multiplication in Bitcoin Script, with explicit overflow detection.
+The opcode performs signed 32-bit integer multiplication in Bitcoin Script, with explicit overflow detection and strict overflow handling.
 
 Contents
 
@@ -46,28 +53,8 @@ op_mul_numeric_overflow.py
 
 Overflow behaviour:
 
-If the product fits in 32 bits: success.
+If the product fits in 32 bits: script succeeds.
 
 Otherwise: script fails with SCRIPT_ERR_MUL.
 
 For details, see the pages linked above.
-
----
-
-### `docs/op_mul-design.md`
-
-```markdown
----
-layout: default
-title: Design and rationale
----
-
-# Design of OP_MUL (0x95)
-
-## 1. Opcode semantics
-
-`OP_MUL` takes two values from the top of the main stack:
-
-```text
-... x1 x2 OP_MUL  ->  ... (x1 * x2)
-```
