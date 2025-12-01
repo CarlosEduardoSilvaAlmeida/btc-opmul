@@ -16,8 +16,6 @@ title: OP_MUL for Bitcoin Core
   }
 </style>
 
-# OP_MUL for Bitcoin Core
-
 This site documents an implementation of a new opcode in Bitcoin Core:
 
 ```text
