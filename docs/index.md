@@ -2,25 +2,7 @@
 title: OP_MUL for Bitcoin Core
 layout: default
 ---
-
-<style>
-  body {
-    background-color: #111111;
-    color: #eeeeee;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-  a {
-    color: #66b3ff;
-  }
-  code, pre {
-    background-color: #222222;
-    border-radius: 4px;
-    padding: 0.15rem 0.35rem;
-  }
-</style>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
 # OP_MUL for Bitcoin Core
 

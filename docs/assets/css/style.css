@@ -1,0 +1,89 @@
+/* Global page background and text */
+body {
+  background-color: #111111;
+  color: #eeeeee;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+/* Wrapper used pelo tema Slate */
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #ffffff;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Links */
+a {
+  color: #66b3ff;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Code and preformatted blocks */
+code {
+  background-color: #222222;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+}
+
+pre {
+  background-color: #1a1a1a;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid #333333;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 1.4rem;
+}
+
+/* Horizontal rules */
+hr {
+  border: 0;
+  border-top: 1px solid #333333;
+  margin: 1.5rem 0;
+}
+
+/* Tables (se você vier a usar) */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid #333333;
+  padding: 0.4rem 0.6rem;
+}
+
+th {
+  background-color: #1f1f1f;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #181818;
+}
+
+/* Pequeno ajuste no rodapé, se existir */
+footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #aaaaaa;
+}

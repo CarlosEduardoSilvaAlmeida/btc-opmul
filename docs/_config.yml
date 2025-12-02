@@ -1,7 +1,22 @@
 title: "OP_MUL for Bitcoin Core"
 description: "Implementation and analysis of OP_MUL (0x95) in Bitcoin Core"
 
+# Tema GitHub Pages (escuro, estilo Slate)
 remote_theme: pages-themes/slate@v0.2.0
 
 plugins:
   - jekyll-remote-theme
+
+# URL do site (ajuste se o nome do repositório for diferente)
+url: "https://romulocampelo.github.io"
+baseurl: "/btc-opmul"
+
+# Metadados básicos
+author: "Alberto Rômulo Nunes Campelo et al."
+repository: "romulocampelo/btc-opmul"
+
+# Opções genéricas usadas por alguns temas (não quebram nada se não forem usadas)
+show_downloads: false
+github:
+  is_project_page: true
+  repository_url: "https://github.com/romulocampelo/btc-opmul"
