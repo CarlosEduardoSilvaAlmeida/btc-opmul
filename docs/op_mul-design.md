@@ -1,4 +1,3 @@
-```markdown
 # Design Rationale and Formal Specification of OP_MUL (0x95)
 
 This document presents a formal and academically rigorous description of the design, semantics, and implementation criteria adopted for the opcode `OP_MUL`, integrated into Bitcoin Core's Script interpreter.
@@ -21,14 +20,14 @@ The goal of this opcode is:
 
 `OP_MUL` consumes two elements from the stack:
 
-`..., x1, x2 → ..., (x1 * x2`
+`..., x1, x2 → ..., (x1 * x2)`
 
 Both operands:
 
 - are interpreted as **signed 32-bit integers**,
 - are extracted via `CScriptNum` with a **4-byte encoding limit** (ensuring compatibility with other arithmetic opcodes).
 
-### **Formal Definition**
+### Formal Definition
 
 Let:
 
@@ -38,7 +37,6 @@ Let:
 Define:
 
 `p = x1 × x2`
-
 
 Then:
 
@@ -102,27 +100,24 @@ The design adheres to the following principles:
 
 ## 6. ASCII Execution Diagram
 
-```
+```text
 Input Stack:
 [..., x1, x2]
 
 Process:
-pop x2
-pop x1
-parse via CScriptNum(4 bytes)
-promote to int64
-p = x1 * x2
-if p outside INT32 range:
-fail with SCRIPT_ERR_MUL
-else:
-push(p)
+  pop x2
+  pop x1
+  parse via CScriptNum(4 bytes)
+  promote to int64
+  p = x1 * x2
+  if p outside INT32 range:
+      fail with SCRIPT_ERR_MUL
+  else:
+      push(p)
 
 Output Stack:
-[..., p] or Script Failure
+[..., p]  or  Script Failure
 ```
-
----
-
 ## 7. Conclusion
 
 `OP_MUL` provides a mathematically well-defined, deterministic, and safe extension to Bitcoin Script’s arithmetic subsystem.  

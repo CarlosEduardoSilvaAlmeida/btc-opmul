@@ -41,18 +41,20 @@ Let:
 - `x1`, `x2` ∈ ℤ32 (signed 32-bit integer domain)  
 - Intermediate multiplication occurs in ℤ64  
 - Define:  
-p = x1 × x2
+`p = x1 × x2`
 Then:
-
+```
 - If `p ∈ [-2³¹, 2³¹ - 1]` → Push(p)
 - Else → Script fails with `SCRIPT_ERR_MUL`
-
+```
 ---
 
 ## 3. OP_MUL Execution Flow (ASCII Diagram)
 
+
+```text
        ┌───────────────────────────────────────────────────┐
-       │                 Bitcoin Script Stack               │
+       │                 Bitcoin Script Stack              │
        └───────────────────────────────────────────────────┘
 
                           Initial State
@@ -85,6 +87,8 @@ Then:
          ------------------              ------------------------
          Script continues               Script evaluation fails
          [..., p]                        SCRIPT_ERR_MUL
+
+```
 
 This diagram models the precise operational semantics and error-propagation path in consensus-critical execution.
 
@@ -119,14 +123,12 @@ This ensures academic clarity and avoids mixing original source with explanatory
 
 ### **Step 1 — Clone Bitcoin Core**
 
-````markdown
 ```bash
 git clone https://github.com/bitcoin/bitcoin.git
 ```
 
 ### **Step 2 — Apply the patch**
 
-````markdown
 ```bash
 git apply patches/op_mul.diff
 ```
@@ -145,6 +147,7 @@ Unit Tests (C++) and Functional Tests (Python):
 python test/functional/script_op_mul.py
 python test/functional/op_mul_numeric_overflow.py
 ```
+---
 
 ## 6. Testing Summary
 
@@ -178,6 +181,7 @@ Tests are reproducible and deterministic.
 
 ## 8. License (MIT)
 
+```text
 MIT License
 
 Copyright (c) 2025
@@ -199,7 +203,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
+```
 
 ---
 

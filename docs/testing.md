@@ -81,14 +81,14 @@ All tests verify:
 
 Ensure Bitcoin Core is built and accessible in the environment.
 
-### Execute unit tests:
+### Execute unit tests
 
 ```bash
 src/test/test_bitcoin.exe
 ```
 
 Execute functional tests:
-```
+```bash
 python test/functional/script_op_mul.py
 python test/functional/op_mul_numeric_overflow.py
 ```
