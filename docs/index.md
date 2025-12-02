@@ -3,7 +3,7 @@ title: OP_MUL for Bitcoin Core
 layout: default
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
 
 # OP_MUL for Bitcoin Core
 
@@ -43,6 +43,12 @@ The sections below describe the project in detail:
 
 - **[Testing Strategy](testing.md)**  
   Unit tests, functional tests, and deterministic overflow validation.
+
+- **[Security Considerations](security-considerations.md)**  
+  Consensus safety, overflow failure modes, and system implications.
+
+- **[Formal Specification](specification.md)**  
+  Operational rules and exact arithmetic semantics.
 
 Additional materials, including patch files and development logs, are available in the repository.
 
