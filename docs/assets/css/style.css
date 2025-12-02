@@ -4,14 +4,13 @@ body {
   color: #eeeeee;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
-}
 
-/* Wrapper used pelo tema Slate */
-.wrapper {
+  /* estas duas linhas recentralizam o conteúdo */
   max-width: 900px;
   margin: 0 auto;
   padding: 1.5rem;
 }
+
 
 /* Headings */
 h1, h2, h3, h4 {
