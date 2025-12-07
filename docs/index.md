@@ -39,7 +39,7 @@ The sections below describe the project in detail:
   Formal semantics, design principles, and integration notes.
   
 - **[Design Rationale and Fixed-Point Guide](integer_design_rationale.md)**
-- to understand the consensus risks of floating-point arithmetic and how to perform decimal calculations using `OP_MUL` with fixed-point logic.  
+  To understand the consensus risks of floating-point arithmetic and how to perform decimal calculations using `OP_MUL` with fixed-point logic.  
 
 - **[Environment and Build Instructions](bitcoin-core-setup.md)**  
   How to reproduce the Bitcoin Core environment used in this work.
