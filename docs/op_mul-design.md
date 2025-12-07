@@ -17,7 +17,21 @@ The objectives are:
 - to ensure interoperability with the integer domain enforced by `CScriptNum`.
 
 ---
+Design Rationale: Why Integer Arithmetic?
 
+A common question regarding arithmetic extensions in Bitcoin Script is the absence of floating-point support (IEEE 754). This implementation strictly adheres to 32-bit signed integers (`CScriptNum`) for the following reasons:
+
+### 1. Consensus and Determinism
+Bitcoin requires absolute consensus. Every node, regardless of hardware architecture (x86, ARM, RISC-V) or compiler version, must produce the exact same result for every transaction. Floating-point arithmetic is notoriously non-deterministic across different platforms due to subtle differences in rounding modes and precision handling. A divergence of a single least-significant bit would cause a hard fork.
+
+### 2. Associativity and Precision
+In floating-point arithmetic, `(a + b) + c` is not always equal to `a + (b + c)` due to precision loss. In financial ledgers, associativity is critical to ensure that the order of operations does not alter the final balance. Integer arithmetic is associative and precise, ensuring that no Satoshis are created or lost due to rounding errors.
+
+### 3. Attack Surface
+Implementing a full floating-point standard introduces complex edge cases such as `NaN` (Not a Number), `Infinity`, and `-0`. These cases create significant complexity in the script interpreter, increasing the validation cost and opening new vectors for Denial of Service (DoS) attacks.
+
+### Solution: Fixed-Point Arithmetic
+Financial calculations requiring decimals (e.g., interest rates, exchange rates) should be implemented using **Fixed-Point Arithmetic** on top of the provided integer opcodes. This shifts the complexity of decimal management to the script layer, keeping the consensus layer simple and robust.
 ## 2. Operational Semantics
 
 `OP_MUL` operates on the top two elements of the stack:
